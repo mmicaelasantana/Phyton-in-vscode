@@ -1,0 +1,66 @@
+#Criar lista
+lista_de_tarefas = []  
+
+# Menu de escolha 
+def menu():
+    print('''
+          𝕷𝖎𝖘𝖙𝖆 𝖉𝖊 𝖙𝖆𝖗𝖊𝖋𝖆𝖘''')
+    print('''
+          1 -𝔄𝔡𝔦𝔠𝔦𝔬𝔫𝔞𝔯 𝔱𝔞𝔯𝔢𝔣𝔞𝔰''')
+    print('''
+          2- 𝔙𝔦𝔰𝔲𝔞𝔩𝔦𝔷𝔞𝔯 𝔱𝔞𝔯𝔢𝔣𝔞𝔰 ''')
+    print('''
+          3 - ℜ𝔢𝔪𝔬𝔳𝔢𝔯 𝔗𝔞𝔯𝔢𝔣𝔞𝔰''')
+    print('''
+         4 -𝔖𝔞𝔦𝔯''')
+
+#Adicionar tarefa
+def adicioar_tarefa():
+    tarefa = input('Digite a tarefa que deseja incluir: ')
+    lista_de_tarefas.append(tarefa)
+    print(f'Tarefa{tarefa} incluida com sucesso!')
+
+#Visualizar tarefa
+def visualizar_tarefas():
+    if lista_de_tarefas == 0:
+        print('Não há terefas na lista')
+    else: 
+        for tarefa in lista_de_tarefas:
+            print(f'{lista_de_tarefas.index(tarefa)+ 1} - {tarefa}') 
+
+#Remover tarefas 
+def remover_tarefas():
+    visualizar_tarefas()    
+    if lista_de_tarefas == []:
+        main
+    else:
+        retirar = int(input( 'Digite o numero da tarefa que deseja retirar: ')) -1
+
+        print(f'A tarefa {lista_de_tarefas[retirar]} foi retirada com sucesso')
+        lista_de_tarefas.pop(retirar)
+       
+#Opção de escolha 
+def main():
+    while True:
+        try:
+            menu()
+            opcao = int(input('Digite o numero da opção desejada: '))
+
+            if opcao == 1:
+                print('Adicionar tarefa')
+                adicioar_tarefa()
+            elif opcao == 2:
+                print('Visualizar tarefa')
+                visualizar_tarefas()
+            elif opcao == 3:
+                print('Remover tarefa')
+            elif opcao == 4:
+                print('Sair')
+                break
+            else: 
+                print('Opção invalida')  
+        except:
+            print('Digite uma opção valida!')
+         
+main()           
+        
